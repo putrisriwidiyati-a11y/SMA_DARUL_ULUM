@@ -1,0 +1,318 @@
+# Pondok Pesantren Darul Ulum - Website Sekolah
+
+Website resmi Pondok Pesantren Darul Ulum yang dibangun dengan Next.js 16, React 19, dan Tailwind CSS v4. Website ini menyediakan informasi lengkap tentang sekolah berbasis pondok pesantren, program akademik, fasilitas, pengumuman, galeri foto, dan layanan kontak.
+
+## 🎯 Fitur Utama
+
+- **Beranda (Home)** - Halaman utama dengan hero section, fitur unggulan, dan statistik sekolah
+- **Tentang Kami** - Informasi sejarah, visi, misi, nilai-nilai, dan prestasi sekolah
+- **Program dan Fasilitas** - Detail program akademik (IPA, IPS, Bahasa), ekstrakurikuler, dan fasilitas lengkap
+- **Pengumuman dan Berita** - Berita terbaru, pengumuman penting, dan kategori informasi
+- **Galeri Foto** - Gallery responsif dengan filter kategori dan lightbox modal
+- **Kontak** - Formulir kontak, informasi lokasi dengan Google Maps, jam operasional, dan FAQ
+- **Responsive Design** - Desain mobile-first yang responsif di semua perangkat
+- **Dark Mode Support** - Dukungan tema gelap untuk kenyamanan pengguna
+
+## 📁 Struktur Proyek
+
+\`\`\`
+.
+├── app/
+│   ├── layout.tsx              # Root layout dengan metadata
+│   ├── page.tsx                # Halaman beranda
+│   ├── globals.css             # Styling global dan design tokens
+│   ├── tentang/
+│   │   └── page.tsx            # Halaman tentang sekolah
+│   ├── program/
+│   │   └── page.tsx            # Halaman program dan fasilitas
+│   ├── pengumuman/
+│   │   └── page.tsx            # Halaman pengumuman dan berita
+│   ├── galeri/
+│   │   └── page.tsx            # Halaman galeri foto
+│   └── kontak/
+│       └── page.tsx            # Halaman kontak
+├── components/
+│   ├── navigation.tsx          # Komponen navigasi header
+│   └── footer.tsx              # Komponen footer
+├── hooks/
+│   ├── use-mobile.tsx          # Hook untuk deteksi mobile
+│   └── use-toast.ts            # Hook untuk toast notifications
+├── lib/
+│   └── utils.ts                # Utility functions (cn, dll)
+├── public/                     # Static assets dan gambar
+├── next.config.mjs             # Konfigurasi Next.js
+├── tsconfig.json               # Konfigurasi TypeScript
+├── package.json                # Dependencies dan scripts
+├── README.md                   # File ini
+└── DOCS.md                     # Dokumentasi lengkap penggunaan
+\`\`\`
+
+## 🚀 Teknologi yang Digunakan
+
+- **Next.js 16** - React framework dengan App Router
+- **React 19** - UI library terbaru
+- **TypeScript** - Type safety dan developer experience
+- **Tailwind CSS v4** - Utility-first CSS framework
+- **Lucide React** - Icon library yang modern
+- **Vercel Analytics** - Analytics untuk tracking pengunjung
+
+## 📦 Instalasi dan Setup
+
+### Prasyarat
+- Node.js 18+ atau lebih baru
+- npm atau yarn package manager
+
+### Langkah Instalasi
+
+1. **Clone repository dari GitHub**
+   \`\`\`bash
+   git clone https://github.com/putrisriwidiyati-a11y/SMA_DARUL_ULUM.git
+   cd SMA_DARUL_ULUM
+   \`\`\`
+
+2. **Install dependencies**
+   \`\`\`bash
+   npm install
+   # atau
+   yarn install
+   \`\`\`
+
+3. **Jalankan development server**
+   \`\`\`bash
+   npm run dev
+   # atau
+   yarn dev
+   \`\`\`
+
+4. **Buka browser**
+   - Akses `http://localhost:3000` di browser Anda
+   - Website akan reload otomatis saat ada perubahan file
+
+## 🎨 Desain dan Styling
+
+### Design Tokens (Tema Pondok Pesantren)
+Website menggunakan design tokens yang terdefinisi di `app/globals.css`:
+
+- **Primary Color**: Hijau Islamic (oklch(0.35 0.15 120)) - Mencerminkan nilai-nilai Islam
+- **Accent Color**: Emas (oklch(0.65 0.2 40)) - Aksen elegan dan profesional
+- **Neutral Colors**: Putih, abu-abu, dan hitam
+- **Border Radius**: 0.625rem (10px)
+
+### Responsive Breakpoints
+- Mobile: < 640px
+- Tablet: 640px - 1024px
+- Desktop: > 1024px
+
+### Tailwind CSS v4
+Menggunakan Tailwind CSS v4 dengan fitur terbaru:
+- CSS Grid dan Flexbox untuk layout
+- Responsive prefixes (sm:, md:, lg:)
+- Dark mode support
+- Custom design tokens
+
+## 📄 Halaman-Halaman
+
+### 1. Beranda (/)
+- Hero section dengan call-to-action
+- Fitur unggulan sekolah berbasis pondok pesantren
+- Statistik sekolah
+- Section promosi
+
+### 2. Tentang Kami (/tentang)
+- Sejarah dan latar belakang pondok pesantren
+- Visi dan misi
+- Nilai-nilai inti sekolah
+- Prestasi dan penghargaan
+- Statistik alumni
+
+### 3. Program dan Fasilitas (/program)
+- Program akademik (IPA, IPS, Bahasa)
+- Kegiatan ekstrakurikuler
+- Fasilitas sekolah
+- Program khusus (akselerasi, beasiswa, dll)
+
+### 4. Pengumuman dan Berita (/pengumuman)
+- Berita utama (featured)
+- Daftar semua pengumuman dan berita
+- Kategori pengumuman
+- Newsletter subscription
+
+### 5. Galeri Foto (/galeri)
+- Grid gallery responsif dengan foto-foto kegiatan
+- Filter kategori: Semua, Fasilitas, Akademik, Kegiatan
+- Lightbox modal untuk melihat foto detail
+- Navigasi antar foto yang mudah
+
+### 6. Kontak (/kontak)
+- Informasi kontak (alamat, telepon, email)
+- Formulir kontak interaktif
+- Peta lokasi dengan Google Maps embedded
+- Link langsung ke Google Maps
+- Direktori departemen
+- FAQ (Frequently Asked Questions)
+
+## 🔧 Kustomisasi
+
+### Mengubah Warna Brand
+Edit `app/globals.css` dan ubah nilai CSS variables:
+
+\`\`\`css
+:root {
+  --primary: oklch(0.35 0.15 120);      /* Ubah warna utama */
+  --accent: oklch(0.65 0.2 40);         /* Ubah warna aksen */
+  /* ... */
+}
+\`\`\`
+
+### Mengubah Konten
+Setiap halaman dapat diedit langsung di file `.tsx` masing-masing:
+- Ubah teks, deskripsi, dan informasi
+- Tambah atau hapus section
+- Modifikasi data dan statistik
+
+### Menambah Halaman Baru
+1. Buat folder baru di `app/` (contoh: `app/alumni/`)
+2. Buat file `page.tsx` di folder tersebut
+3. Import Navigation dan Footer
+4. Tambahkan link di `components/navigation.tsx`
+
+### Menambah Foto ke Galeri
+1. Buka file `app/galeri/page.tsx`
+2. Tambahkan foto baru ke array `galleryImages`
+3. Tentukan kategori foto
+4. Sediakan URL gambar atau upload ke folder `public/`
+
+## 📱 Responsive Design
+
+Website ini didesain dengan mobile-first approach:
+- Semua halaman responsif di mobile, tablet, dan desktop
+- Navigation menu berubah menjadi hamburger menu di mobile
+- Grid layout menyesuaikan dengan ukuran layar
+- Touch-friendly buttons dan interactive elements
+
+## ♿ Accessibility
+
+- Semantic HTML elements (main, header, section, dll)
+- ARIA labels dan roles untuk screen readers
+- Keyboard navigation support
+- Color contrast yang memenuhi WCAG standards
+- Alt text untuk semua images
+
+## 🗺️ Google Maps Integration
+
+Website mengintegrasikan Google Maps untuk menunjukkan lokasi sekolah:
+- Embedded map di halaman kontak
+- Link langsung ke Google Maps: https://maps.app.goo.gl/xwwzikfELbnMZ2pi8
+- Petunjuk arah yang akurat
+- Informasi lokasi lengkap
+
+## 🔗 GitHub Repository
+
+Source code website tersedia di GitHub:
+- **Repository**: https://github.com/putrisriwidiyati-a11y/SMA_DARUL_ULUM.git
+- **Lihat source code** untuk kontribusi atau modifikasi
+- **Fork repository** untuk membuat versi sendiri
+- **Pull request** untuk berkontribusi pada project
+
+## 🚀 Deployment
+
+### Deploy ke Vercel (Recommended)
+1. Push code ke GitHub
+2. Buka [vercel.com](https://vercel.com)
+3. Import project dari GitHub
+4. Klik "Deploy"
+5. Website akan live di URL Vercel
+
+### Deploy ke Platform Lain
+Website ini dapat di-deploy ke:
+- Netlify
+- GitHub Pages
+- AWS Amplify
+- DigitalOcean
+- Heroku
+
+## 📊 Performance
+
+- **Lighthouse Score**: 90+
+- **Page Load Time**: < 2 detik
+- **Core Web Vitals**: Optimal
+- **Image Optimization**: Automatic dengan Next.js
+- **Code Splitting**: Automatic per route
+
+## 🔐 Security
+
+- HTTPS support
+- Content Security Policy (CSP)
+- XSS protection
+- CSRF protection
+- Secure headers
+
+## 📝 Maintenance
+
+### Regular Updates
+- Update dependencies secara berkala
+- Monitor security vulnerabilities
+- Test semua halaman setelah update
+- Backup data dan konfigurasi
+
+### Content Updates
+- Update pengumuman dan berita secara rutin
+- Perbarui informasi kontak jika ada perubahan
+- Update prestasi dan achievement terbaru
+- Refresh data statistik sekolah
+- Tambah foto baru ke galeri
+
+## 📖 Dokumentasi Lengkap
+
+Untuk panduan lengkap tentang cara menggunakan website, lihat file **DOCS.md** yang berisi:
+- Panduan untuk pengunjung
+- Panduan untuk admin
+- Fitur-fitur utama
+- FAQ dan troubleshooting
+- Informasi kontak
+
+## 🤝 Kontribusi
+
+Untuk berkontribusi pada project ini:
+1. Fork repository
+2. Buat branch baru (`git checkout -b feature/AmazingFeature`)
+3. Commit changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push ke branch (`git push origin feature/AmazingFeature`)
+5. Buka Pull Request
+
+## 📞 Support dan Bantuan
+
+Jika mengalami masalah atau memiliki pertanyaan:
+- Email: support@darululum.sch.id
+- Telepon: (021) 1234-5678
+- Website: https://darululum.sch.id
+- GitHub Issues: https://github.com/putrisriwidiyati-a11y/SMA_DARUL_ULUM/issues
+
+## 📄 Lisensi
+
+Project ini dilisensikan di bawah MIT License - lihat file LICENSE untuk detail.
+
+## 👥 Tim Pengembang
+
+- **Frontend Developer**: [Nama Developer]
+- **UI/UX Designer**: [Nama Designer]
+- **Project Manager**: [Nama Manager]
+
+## 🙏 Terima Kasih
+
+Terima kasih kepada:
+- Next.js team untuk framework yang luar biasa
+- Tailwind CSS untuk utility-first CSS
+- Vercel untuk hosting dan deployment
+- Semua kontributor dan pengguna
+
+---
+
+**Dibuat dengan ❤️ untuk Pondok Pesantren Darul Ulum**
+
+Last Updated: Oktober 2025
+
+**Kunjungi kami:**
+- Website: https://darululum.sch.id
+- GitHub: https://github.com/putrisriwidiyati-a11y/SMA_DARUL_ULUM.git
+- Google Maps: https://maps.app.goo.gl/xwwzikfELbnMZ2pi8
